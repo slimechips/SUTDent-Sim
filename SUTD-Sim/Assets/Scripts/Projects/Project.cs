@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Project", menuName = "School Project")]
 public class Project: Card
 {
     public int pillar;
