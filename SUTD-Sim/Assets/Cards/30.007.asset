@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c997533802e2bc88f677fdbc70d578, type: 3}
   m_Name: 30.007
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: 30.07
   manaCost: 0
   cardArt: {fileID: 0}
   pillar: 0
