@@ -7,3 +7,5 @@ SUTD Table Top Game
 [Card Stats](https://docs.google.com/spreadsheets/d/1WmIoUuvPl7e1lbwbEOd98q5nYLmHMb8K245dRutHiJE/edit#gid=0)
 
 [Scriptable Objs and Creating Assets](https://www.youtube.com/watch?v=aPXvoWVabPY)
+
+[Serializable Dictionares](https://forum.unity.com/threads/finally-a-serializable-dictionary-for-unity-extracted-from-system-collections-generic.335797/)

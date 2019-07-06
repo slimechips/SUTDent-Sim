@@ -5,7 +5,7 @@ using Utils.General;
 
 [CreateAssetMenu(fileName = "New Project", menuName = "School Project")]
 public class Project: Card
-{
+{   
     public int pillar;
     public int points;
     public StringIntSeDict requirements = new StringIntSeDict();

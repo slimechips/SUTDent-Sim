@@ -6,7 +6,6 @@ using UnityEngine;
 namespace Utils.Editor
 {
     public class GenericList<T> : ScriptableObject, IEnumerable<T>
-    where T : IComparable
     {
         [SerializeField]
         private List<T> _internalList;
