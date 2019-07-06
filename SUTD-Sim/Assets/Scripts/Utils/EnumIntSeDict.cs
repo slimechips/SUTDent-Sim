@@ -9,6 +9,7 @@ namespace Utils
 
     //namespace General
     //{
+        
     //    [Serializable]
     //    public class EnumIntseDict : SerializableDictionary<string, int> { }
 
