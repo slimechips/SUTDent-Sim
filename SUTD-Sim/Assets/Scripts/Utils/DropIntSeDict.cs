@@ -9,15 +9,14 @@ namespace Utils
     namespace General
     {
         [Serializable]
-        public class StringIntSeDict : SerializableDictionary<string, int> {
-        }
+        public class DropdownIntSeDict : SerializableDictionary<string, int> { }
 
         namespace Internal
         {
-            [CustomPropertyDrawer(typeof(StringIntSeDict))]
-            public class StringIntSeDictDrawer : DictionaryDrawer<string, int> { }
+            [CustomPropertyDrawer(typeof(DropdownIntSeDict))]
+            public class DropDownIntSeDictDrawer : DictionaryDrawer<string, int> { }
         }
     }
-    
+
 }
 

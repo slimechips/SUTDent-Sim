@@ -10,36 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8c997533802e2bc88f677fdbc70d578, type: 3}
-  m_Name: Capstone
+  m_Name: New Project
   m_EditorClassIdentifier: 
-  cardName: Capstone
+  cardName: 
   manaCost: 0
   cardArt: {fileID: 0}
   pillar: 0
   points: 0
   requirements:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
+    _Buckets: 01000000ffffffffffffffff
+    _HashCodes: 8db72c1690b72c1600000000
+    _Next: ffffffff0000000000000000
+    _Count: 2
+    _Version: 2
     _FreeList: -1
     _FreeCount: 0
     _Keys:
-    - 
-    - 
-    - 
-    _Values: 000000000000000000000000
-  rewards:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys:
-    - 
-    - 
+    - 1
+    - 2
     - 
     _Values: 000000000000000000000000

@@ -10,6 +10,8 @@ namespace Utils.Editor
         [SerializeField]
         private List<T> _internalList;
 
+        public static implicit operator List<T>(GenericList<T> list) => list._internalList;
+
         public GenericList()
         {
             _internalList = new List<T>();

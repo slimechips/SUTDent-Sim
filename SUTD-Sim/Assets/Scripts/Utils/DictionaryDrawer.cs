@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Credits to vexe from Unity Forums for this code. 
+// https://forum.unity.com/threads/finally-a-serializable-dictionary-for-unity-extracted-from-system-collections-generic.335797/
+
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Credits to vexe from Unity Forums for this code. 
+// https://forum.unity.com/threads/finally-a-serializable-dictionary-for-unity-extracted-from-system-collections-generic.335797/
+
+using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -93,6 +96,34 @@ public class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TValue>
 
         foreach (KeyValuePair<TKey, TValue> current in dictionary)
             Add(current.Key, current.Value);
+    }
+
+    public void InitialiseValues(List<TKey> list)
+    {
+        if (list == default)
+        {
+            return;
+        }
+
+        foreach (TKey item in list)
+        {
+            if (!this.ContainsKey(item))
+            {
+                if (typeof(TValue) == typeof(int))
+                {
+                    this[item] = (TValue)(object)0;
+                }
+                else if (typeof(TValue) == typeof(string))
+                {
+                    this[item] = (TValue)(object)"";
+                }
+                else
+                {
+                    throw new ArgumentException("Invalid Type for initialising");
+                }
+            }
+
+        }
     }
 
     public bool ContainsValue(TValue value)
