@@ -83,7 +83,13 @@ namespace Utils.General.Internal
 
                 var valueRect = position;
                 valueRect.x = position.width / 2 + 15;
-                valueRect.width = keyRect.width - kButtonWidth;
+                if (typeof(TV) == typeof(int))
+                {
+                    valueRect.width = keyRect.width - 3 * (kButtonWidth);
+                } else
+                {
+                    valueRect.width = keyRect.width - kButtonWidth;
+                }
                 EditorGUI.BeginChangeCheck();
                 value = DoField(valueRect, typeof(TV), value);
                 if (EditorGUI.EndChangeCheck())
@@ -92,13 +98,46 @@ namespace Utils.General.Internal
                     break;
                 }
 
-                var removeRect = valueRect;
-                removeRect.x = valueRect.xMax + 2;
-                removeRect.width = kButtonWidth;
-                if (GUI.Button(removeRect, new GUIContent("x", "Remove item"), EditorStyles.miniButtonRight))
+                if (typeof(TV) == typeof(int))
                 {
-                    RemoveItem(key);
-                    break;
+                    var decreaseRect = valueRect;
+                    decreaseRect.x = valueRect.xMax + 2;
+                    decreaseRect.width = kButtonWidth;
+                    if (GUI.Button(decreaseRect, new GUIContent("-", "Decrease value"), EditorStyles.miniButtonRight))
+                    {
+                        DecreaseValue(key);
+                        EditorGUIUtility.editingTextField = false; // So that UI can update
+                        break;
+                    }
+
+                    var increaseRect = decreaseRect;
+                    increaseRect.x = decreaseRect.xMax + 2;
+                    increaseRect.width = kButtonWidth;
+                    if (GUI.Button(increaseRect, new GUIContent("+", "Increase value"), EditorStyles.miniButtonRight))
+                    {
+                        IncreaseValue(key);
+                        EditorGUIUtility.editingTextField = false; // So that UI can update
+                        break;
+                    }
+
+                    var removeRect = increaseRect;
+                    removeRect.x = increaseRect.xMax + 2;
+                    removeRect.width = kButtonWidth;
+                    if (GUI.Button(removeRect, new GUIContent("x", "Remove item"), EditorStyles.miniButtonRight))
+                    {
+                        RemoveItem(key);
+                        break;
+                    }
+                } else
+                {
+                    var removeRect = valueRect;
+                    removeRect.x = valueRect.xMax + 2;
+                    removeRect.width = kButtonWidth;
+                    if (GUI.Button(removeRect, new GUIContent("x", "Remove item"), EditorStyles.miniButtonRight))
+                    {
+                        RemoveItem(key);
+                        break;
+                    }
                 }
             }
         }
@@ -106,6 +145,32 @@ namespace Utils.General.Internal
         private void RemoveItem(TK key)
         {
             _Dictionary.Remove(key);
+        }
+        
+        private int IncreaseValue(TK key)
+        {
+            if (typeof(TV) != typeof(int))
+            {
+                Debug.Log("Invalid Attempt to increase value");
+                return 0;
+            }
+            TV tV = _Dictionary[key];
+            int tVInt = (int)(object)tV;
+            _Dictionary[key] = (TV)(object)++tVInt;
+            return tVInt;
+        }        
+
+        private int DecreaseValue(TK key)
+        {
+            if (typeof(TV) != typeof(int))
+            {
+                Debug.Log("Invalid Attempt to decrease value");
+                return 0;
+            }
+            TV tV = _Dictionary[key];
+            int tVInt = (int)(object)tV;
+            _Dictionary[key] = (TV)(object)--tVInt;
+            return tVInt;
         }
 
         private void CheckInitialize(SerializedProperty property, GUIContent label)
