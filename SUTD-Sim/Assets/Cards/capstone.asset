@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c997533802e2bc88f677fdbc70d578, type: 3}
+  m_Name: capstone
+  m_EditorClassIdentifier: 
+  cardName: 
+  manaCost: 0
+  cardArt: {fileID: 0}
+  pillar: 0
+  points: 0
+  requirements:
+    _Buckets: 04000000010000000300000007000000ffffffffffffffff0600000002000000ffffffffffffffff05000000ffffffffffffffffffffffffffffffffffffffffffffffff
+    _HashCodes: f8cd930d342eb571e6ae183780008a2af40e2a5ba5f57064e98396248673124c000000000000000000000000000000000000000000000000000000000000000000000000
+    _Next: ffffffff00000000ffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000000000000000000000000000
+    _Count: 8
+    _Version: 8
+    _FreeList: -1
+    _FreeCount: 0
+    _Keys:
+    - Math
+    - Science
+    - Communication
+    - Aesthetic
+    - Fabrication
+    - Programming
+    - Universal
+    - test
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    _Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  rewards:
+    _Buckets: 04000000010000000300000007000000ffffffffffffffff0600000002000000ffffffffffffffff05000000ffffffffffffffffffffffffffffffffffffffffffffffff
+    _HashCodes: f8cd930d342eb571e6ae183780008a2af40e2a5ba5f57064e98396248673124c000000000000000000000000000000000000000000000000000000000000000000000000
+    _Next: ffffffff00000000ffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000000000000000000000000000
+    _Count: 8
+    _Version: 8
+    _FreeList: -1
+    _FreeCount: 0
+    _Keys:
+    - Math
+    - Science
+    - Communication
+    - Aesthetic
+    - Fabrication
+    - Programming
+    - Universal
+    - test
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    _Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000

@@ -25,3 +25,7 @@ MonoBehaviour:
     shortName: Fab
   - name: Programming
     shortName: Prog
+  - name: Universal
+    shortName: Uni
+  - name: test
+    shortName: test

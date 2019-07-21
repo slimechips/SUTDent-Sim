@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Project", menuName = "School Project")]
 public class Project : Card
 {
+    public enum PillarEnum { Freshmore, ASD, EPD, ESD, ISTD };
+
     private static StatList _stats;
     public PillarEnum pillar;
     public int points;
@@ -24,17 +27,14 @@ public class Project : Card
 
     public void OnEnable()
     {
-        if (_stats == default(StatList))
-        {
-            InitialiseStatList();
-        }
-        
+        InitialiseStatList();
         generateButton = new SimpleSOButton("Generate Card", GenerateCard);
 
     }
 
     private void InitialiseStatList()
     {
+
         try
         {
             _stats = (StatList)AssetDatabase.LoadAssetAtPath("Assets/Stats/Common Stat List.asset", typeof(StatList));
@@ -44,10 +44,17 @@ public class Project : Card
             return;
         }
 
-        requirements.InitialiseValues(_stats);
-        rewards.InitialiseValues(_stats);
+        UpdateDictionary(requirements);
+        UpdateDictionary(rewards);
     }
 
-    public enum PillarEnum { Freshmore, ASD, EPD, ESD, ISTD };
+    private void UpdateDictionary<TV>(SerializableDictionary<string, TV> dict)
+    {
+        object[] dictKeys = (object[])dict.Keys;
+        List<string> newKeys = ((List<string>)_stats).Except(dictKeys).ToList()
+            .ConvertAll((object obj) => obj.ToString());
+
+        dict.InitialiseValues(newKeys);
+    }
 }
 

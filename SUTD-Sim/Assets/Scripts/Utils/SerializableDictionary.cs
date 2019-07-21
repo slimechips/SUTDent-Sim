@@ -58,6 +58,17 @@ public class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TValue>
         set { Insert(key, value, false); }
     }
 
+    public static implicit operator SerializableDictionary<object, object>(SerializableDictionary<TKey, TValue> dict)
+    {
+        Dictionary<object, object> objDict = new Dictionary<object, object>();
+        foreach (KeyValuePair<TKey, TValue> set in dict)
+        {
+            objDict.Add(set.Key, set.Value);
+        }
+        return new SerializableDictionary<object, object>(objDict);
+    }
+
+
     public SerializableDictionary()
         : this(0, null)
     {
@@ -104,7 +115,6 @@ public class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TValue>
         {
             return;
         }
-
         foreach (TKey item in list)
         {
             if (!this.ContainsKey(item))
